@@ -10,22 +10,22 @@
     <main>
       <fieldset>
         <legend>Půjčovna - objednávka</legend>
-        <form name="formular">
-          <input type="checkbox" name="horske" class="horske" /> horské 500
-          Kč/den
-          <input type="text" placeholder="počet kusů" class="pocetHorske" />
+        <form name="form">
+          <input type="checkbox" name="horske" />
+          horské 500 Kč/den
+          <input type="number" placeholder="0" class="pocetHorske" />
           <br />
-          <input type="checkbox" name="destke" class="detske" /> dětské 200
-          Kč/den
-          <input type="text" placeholder="počet kusů" class="pocetDetske" />
+          <input type="checkbox" name="detske" />
+          dětské 200 Kč/den
+          <input type="number" placeholder="0" class="pocetDetske" />
           <br />
-          <input type="checkbox" name="silnicni" class="silnicni" /> silniční
-          1500 Kč/den
-          <input type="text" placeholder="počet kusů" class="pocetSilnicni" />
+          <input type="checkbox" name="silnicni" />
+          silniční 1500 Kč/den
+          <input type="number" placeholder="0" class="pocetSilnicni" />
           <br />
-          <input type="checkbox" name="gravel" class="gravel" /> gravel 2500
-          Kč/den
-          <input type="text" placeholder="počet kusů" class="pocetGravel" />
+          <input type="checkbox" name="gravel" />
+          gravel 2500 Kč/den
+          <input type="number" placeholder="0" class="pocetGravel" />
           <br />
           <select name="pocetDnu">
             <option value="5">5 dnů</option>
@@ -35,20 +35,30 @@
           </select>
         </form>
         <label>
-          <input type="radio" name="nosic" value="1.05" />
+          <input type="radio" id="radio1" name="nosic" value="1.05" />
           cyklonosič střešní (+ 5 procent z celkové ceny zápůjčky navíc) </label
         ><br />
         <label>
-          <input type="radio" name="nosic" value="1.1" />
+          <input type="radio" id="radio2" name="nosic" value="1.1" />
           cyklonosič na tažné zařízení (+ 10 procent z celkové ceny zápůjčky
           navíc) </label
         ><br />
         <label>
-          <input type="radio" name="nosic" value="1" />není třeba cyklonosič </label
+          <input type="radio" id="radio3" name="nosic" value="1" />není třeba
+          cyklonosič </label
         ><br />
-        <button type="button" class="vypocet">Vypočítej celkovou cenu</button
+        <button type="button" class="vypocet" onclick="vysledek()">
+          Vypočítej celkovou cenu</button
         ><br />
-        <input type="text" placeholder="Váš rozpočet" class="rozpocet" /> Kč
+        <input
+          type="number"
+          id="limit"
+          class="rozpocet"
+          min="0"
+          step="100"
+          value=""
+        />
+        Kč
         <br />
         <div class="message">Info k výsledné ceně</div>
         <input
@@ -58,7 +68,7 @@
           name="email"
           value=""
         /><br />
-        <input type="submit" value="Odeslat" />
+        <input type="submit" value="Odeslat" onclick="emailCheck()" />
       </fieldset>
     </main>
     <script src="script.js"></script>
