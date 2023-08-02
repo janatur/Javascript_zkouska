@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Kolosalon</title>
+  </head>
+  <body>
+    <header><h1>Kolosalon</h1></header>
+    <main>
+      <fieldset>
+        <legend>Půjčovna - objednávka</legend>
+        <form
+          name="formular"
+          action="script.js"
+          onsubmit="return KontrolaDat(this)"
+        >
+          <input type="checkbox" name="horske" class="horske" /> horské 500
+          Kč/den
+          <input type="text" placeholder="počet kusů" class="pocetHorske" />
+          <br />
+          <input type="checkbox" name="destke" class="detske" /> dětské 200
+          Kč/den
+          <input type="text" placeholder="počet kusů" class="pocetDetske" />
+          <br />
+          <input type="checkbox" name="silnicni" class="silnicni" /> silniční
+          1500 Kč/den
+          <input type="text" placeholder="počet kusů" class="pocetSilnicni" />
+          <br />
+          <input type="checkbox" name="gravel" class="gravel" /> gravel 2500
+          Kč/den
+          <input type="text" placeholder="počet kusů" class="pocetGravel" />
+          <br />
+          <select name="pocetDnu">
+            <option value="5">5 dnů</option>
+            <option value="7">týden</option>
+            <option value="14">14 dní</option>
+            <option value="30">měsíc</option>
+          </select>
+        </form>
+        <label>
+          <input type="radio" name="nosic" value="1.05" />
+          cyklonosič střešní (+ 5 procent z celkové ceny zápůjčky navíc) </label
+        ><br />
+        <label>
+          <input type="radio" name="nosic" value="1.1" />
+          cyklonosič na tažné zařízení (+ 10 procent z celkové ceny zápůjčky
+          navíc) </label
+        ><br />
+        <label>
+          <input type="radio" name="nosic" value="1" />není třeba cyklonosič </label
+        ><br />
+        <button type="button" class="vypocet">Vypočítej celkovou cenu</button
+        ><br />
+        <input type="text" placeholder="Váš rozpočet" class="rozpocet" /> Kč
+        <br />
+        <div class="message">Info k výsledné ceně</div>
+        <input
+          type="email"
+          placeholder="Váš email"
+          class="email"
+          name="email"
+          value=""
+        /><br />
+        <input type="submit" value="Odeslat" />
+      </fieldset>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
